@@ -84,6 +84,10 @@ body{
     display: none;
 }
 
+.imagem-centro-mobile{
+    display: none;
+}
+
 .texto-imagem{
     position: absolute;
     top: 13vw;
@@ -126,7 +130,7 @@ body{
 .inferior{
     display: flex;
     justify-content: space-around;
-    margin-top: 13vh;
+    margin-top: 8vw;
 }
 
 .opcoes-inferior{
@@ -226,10 +230,83 @@ body{
     }
 
     .inferior{
-        margin-top: 50vh;
+        margin-top: 30vw;
     }
 }
 
 @media(max-width: 768px){
+    .inferior{
+        margin-top: 35vw;
+    }
+}
+
+@media(max-width: 450px){
+    .imagem-centro-hd{
+        display: none;
+    }
+
+    .imagem-centro-mobile{
+        display: flex;
+        width: 100%;
+    }
+
+    .texto-imagem{
+        position: absolute;
+        top: 100vw;
+        left: 6vw;
+    }
+
+    .texto-imagem button{
+        font-size: 4vw;
+    }
+
+    .inferior{
+        margin-top: 70vw;
+    }
+
+    .opcoes-inferior{
+        display: block;
+        padding: 0;
+    }
+
+    .xbox{
+        padding-top: 10vw;
+    }
+
+    .windows{
+        padding-top: 10vw;
+    }
+
+    .microsoft img{
+        position: relative;
+        left: 50%;
+    }
     
+    .xbox img{
+        position: relative;
+        left: 50%;
+    }
+    
+    .windows img{
+        position: relative;
+        left: 50%;
+    }
+    
+    .microsoft a{
+        position: relative;
+        left: 5vw;
+        font-weight:600;
+    }
+    
+    .xbox a{
+        position: relative;
+        left: 12vw;
+        font-weight:600;
+    }
+    
+    .windows a{
+        position: relative;
+        left: 8vw;
+        font-weight:600;
+    }
 }
