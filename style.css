@@ -47,7 +47,7 @@ body{
 
 .opcoes-cabecalho li{
     padding: 18px;
-    padding-right: 6px;
+    padding-right: 2px;
     border: 1px;
     text-decoration: none; 
     font-size: 13px;
@@ -67,7 +67,7 @@ body{
 
 .buttons li{
     padding: 18px;
-    padding-right: 6px;
+    padding-right: 3px;
     border: 1px;
     text-decoration: none; 
     font-size: 13px;
@@ -75,6 +75,30 @@ body{
 
 .buttons li:hover{
     text-decoration: underline;
+}
+
+.seta {
+    float: right;
+    margin-left: -20px;
+    margin-top: 5px;
+}
+
+.lupa {
+   float: right;
+   margin-left: -15px;
+   margin-top: -10px;
+}
+
+.carrinho {
+    float: right;
+    margin-left: -20px;
+    margin-top: -17px;
+}
+
+.usuario {
+    float: right;
+    margin-left: -20px;
+    margin-top: -15px;
 }
 
 .centro {
