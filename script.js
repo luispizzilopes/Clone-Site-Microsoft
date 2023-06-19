@@ -157,6 +157,19 @@ class Funcionalidades{
             }, 1500);
         }
     }
+
+    excluir(){
+        let botoes = document.querySelectorAll('.btn-excluir');
+        let itens = document.querySelectorAll('.item'); 
+        for(let i = 0; i<botoes.length;i++){
+            botoes[i].addEventListener('click', ()=>{
+                let id = itens[i].childNodes[0].innerHTML; 
+                publicacoes = publicacoes.filter(p => p.id !== id); 
+                localStorage.conteudoPagina = JSON.stringify(publicacoes); 
+                location.reload(); 
+            }); 
+        }
+    }
 }
 
 var funcionalidades = new Funcionalidades(); 
@@ -194,6 +207,8 @@ inputLinkEditar.addEventListener('input', function(){
 });
 
 botaoEditar.addEventListener('click', funcionalidades.editar); 
+
+document.addEventListener('DOMContentLoaded', funcionalidades.excluir);
 
 function mostrarConteudo(){
     for(let i=0; i<publicacoes.length; i++){
