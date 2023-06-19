@@ -123,11 +123,77 @@ class Funcionalidades{
             }, 1500);
         }
     }
+
+    carregarInformacoesEditar(){
+        let botoes = document.querySelectorAll('.btn-editar');
+        let inputTitulo = document.querySelector('.input-titulo-editar');
+        let inputDescricao = document.querySelector('.input-descricao-editar');
+        let inputLink = document.querySelector('.input-link-editar');
+        for (let i = 0; i < botoes.length; i++) {
+            botoes[i].addEventListener('click', () => {
+                indiceEditar = i; 
+                inputTitulo.value = publicacoes[indiceEditar].titulo;
+                inputDescricao.value = publicacoes[indiceEditar].descricao;
+                inputLink.value = publicacoes[indiceEditar].link;
+                dialogEditarItem.className = "dialog-editar-item-show"; 
+            });
+        }
+    }
+
+    editar(){
+        if(inputTituloEditar.value.length >= 4 && inputDescricaoEditar.value.length >= 10 
+            && inputLinkEditar.value.includes("http")){
+
+        publicacoes[indiceEditar].titulo = inputTituloEditar.value; 
+        publicacoes[indiceEditar].descricao = inputDescricaoEditar.value; 
+        publicacoes[indiceEditar].link = inputLinkEditar.value;
+    
+        localStorage.conteudoPagina = JSON.stringify(publicacoes); 
+        location.reload(); 
+        }else{
+            document.querySelector('.resultado-editar').innerHTML = "Verifique todos os campos e tente novamente!"; 
+            setTimeout(() => {
+                document.querySelector('.resultado-editar').innerHTML = ""; 
+            }, 1500);
+        }
+    }
 }
 
 var funcionalidades = new Funcionalidades(); 
 
 botaoAdicionar.addEventListener('click', funcionalidades.adicionar);
+
+document.addEventListener('DOMContentLoaded', funcionalidades.carregarInformacoesEditar);
+
+const inputTituloEditar = document.querySelector('.input-titulo-editar');
+const inputDescricaoEditar = document.querySelector('.input-descricao-editar');
+const inputLinkEditar = document.querySelector('.input-link-editar'); 
+
+inputTituloEditar.addEventListener('input', function(){
+    if(inputTituloEditar.value.length < 4){
+        document.querySelector('.resultado-editar').innerHTML = "O título deve conter no minimo 4 caracteres!";
+    }else{
+        document.querySelector('.resultado-editar').innerHTML = "";
+    }
+});
+
+inputDescricaoEditar.addEventListener('input', function(){
+    if(inputDescricaoEditar.value.length < 10){
+        document.querySelector('.resultado-editar').innerHTML = "A descrição deve conter no minimo 10 caracteres!";
+    }else{
+        document.querySelector('.resultado-editar').innerHTML = "";
+    }
+});
+
+inputLinkEditar.addEventListener('input', function(){
+    if(!inputLinkEditar.value.includes("http")){
+        document.querySelector('.resultado-editar').innerHTML = "Informe um link válido!";
+    }else{
+        document.querySelector('.resultado-editar').innerHTML = "";
+    }
+});
+
+botaoEditar.addEventListener('click', funcionalidades.editar); 
 
 function mostrarConteudo(){
     for(let i=0; i<publicacoes.length; i++){
