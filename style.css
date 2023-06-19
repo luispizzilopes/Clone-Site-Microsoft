@@ -177,6 +177,7 @@ body{
 .opcoes-inferior{
     display: flex;
     padding: 0;
+    list-style: none;
 }
 
 .opcoes-inferior div{
@@ -217,6 +218,167 @@ body{
     font-weight:600;
 }
 
+.dialog-buscar{
+    display: none;
+}
+
+.dialog-buscar-show{
+    position: absolute;
+    top: 58px;
+    right: 10px; 
+}
+
+.dialog-buscar-show input{
+    width: 60vw; 
+    font-size: 13px;
+    border-color: black;
+    border-style:initial;
+    padding: 7px;
+}
+
+.dialog-buscar-show button{
+    font-size: 12px;
+    padding: 8px;
+    background-color: white;
+    border-color: black;
+    border-style:double;
+}
+
+.dialog-novo-item{
+    display: none;
+}
+
+.dialog-editar-item{
+    display: none;
+}
+
+.header-dialog{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px; 
+    font-size: 25px;
+}
+
+.header-dialog input{
+    background-color: white; 
+    border-color: transparent;
+    border-radius: 5px;
+    color: #0067b8;
+}
+
+.header-dialog input:hover{
+    background-color: #529dd7;
+    color: white;
+    border-color: white;
+    border-style:groove;
+}
+
+.body-dialog{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.body-dialog input{
+    margin-top: 10px;
+    background-color: white; 
+    border-color: transparent;
+    border-radius: 5px;
+    color: #0067b8;
+    font-size: 20px;
+}
+
+.body-dialog input:hover{
+    background-color: #3c83b9;
+    color: white;
+}
+
+.dialog-novo-item-show{
+    width: 500px;
+    position: fixed;
+    top: 20%;
+    left: 32%;
+    background: linear-gradient(90deg,#529dd7, #3c83b9, #1c71b2, #0067b8);
+    border-radius: 10px;
+    color: white;
+}
+
+.dialog-editar-item-show{
+    width: 500px;
+    position: fixed;
+    top: 20%;
+    left: 32%;
+    background: linear-gradient(90deg,#529dd7, #3c83b9, #1c71b2, #0067b8);
+    border-radius: 10px;
+    color: white;
+}
+
+.lista-conteudo{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 50px;
+}
+
+.lista-conteudo div{
+    width: 285px;
+    margin-bottom: 25px;
+}
+
+.lista-conteudo img{
+    width: 285px;
+    height: 160px;
+}
+
+.lista-conteudo label{
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.lista-conteudo p{
+    font-size: 17px;
+    word-break: normal;
+    font-weight: 100;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.lista-conteudo button{
+    border-color: transparent;
+    background-color: #0067b8;
+    border-radius:10px;
+    color: white;
+    font-size: 15px;
+    padding: 6px;
+    margin-right: 10px;
+}
+
+.lista-conteudo button:hover{
+    background-color: #307fba;
+}
+
+.box-adicionar-item{
+    position: fixed;
+    bottom: 20px;
+    left: 85%;
+    background-color: #0067b8;
+    padding: 12px;
+    border-radius:15px; 
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.box-adicionar-item img{
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+}
+
+.box-adicionar-item:hover{
+    background-color: #307fba;
+}
+
 @media(max-width: 1080px){
 
     .imagem-microsoft{
@@ -228,6 +390,10 @@ body{
         height: 24px;
         width: 24px;
         margin-top: 14px;
+    }
+
+    .menu-esquerda img{
+        margin-right: 15px;
     }
 
     .menu-direita{
@@ -290,12 +456,49 @@ body{
     .inferior{
         margin-top: 30vw;
     }
+    
+    .dialog-novo-item-show{
+        left: 25%; 
+    }
+
+    .dialog-editar-item-show{
+        left: 25%; 
+    }
+
+    .lista-conteudo{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .box-adicionar-item{
+        border-radius: 100px;
+        left: 90%;
+    }
+
+    .box-adicionar-item img{
+        margin-right: 0px;
+    }
+
+    .box-adicionar-item p{
+        display: none;
+    }
 }
 
 @media(max-width: 768px){
     .inferior{
         margin-top: 35vw;
         margin-left: 5%;
+    }
+
+    .dialog-novo-item-show{
+        left: 15vw; 
+    }
+
+    .dialog-editar-item-show{
+        left: 15vw; 
+    }
+
+    .lista-conteudo{
+        grid-template-columns: 1fr;
     }
 }
 
@@ -381,5 +584,43 @@ body{
         position: relative;
         left: 8vw;
         font-weight:600;
+    }
+
+    .dialog-novo-item-show{
+        left: 20%;
+        width: 350px; 
+    }
+
+    .dialog-editar-item-show{
+        left: 20%;
+        width: 350px; 
+    }
+
+    .header-dialog input{
+        height: 40px;
+    }
+
+    .box-adicionar-item{
+        left: 85%;
+    }
+}
+
+@media(max-width:540px){
+    .dialog-novo-item-show{
+        left: 15%;
+    }
+
+    .dialog-editar-item-show{
+        left: 15%;
+    }
+}
+
+@media(max-width:400px){
+    .dialog-novo-item-show{
+        left: 3%;
+    }
+
+    .dialog-editar-item-show{
+        left: 3%;
     }
 }

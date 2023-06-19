@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +8,20 @@
     <link rel="icon" href="img/Microsoft_icon.png">
     <title>Microsoft – Nuvem, aplicativos e jogos</title>
 </head>
-
 <body>
     <div class="container">
         <header class="cabecalho">
             <div class="menu-esquerda">
-                <img src="img/menu-esquerda.png">
+                <img src="img/menu.png" alt="Icone de menu">
+                <img src="img/lupa-menu.png" alt="Icone de pesquisa" class="icone-pesquisar">
             </div>
             <div class="imagem-opcoes">
                 <div class="imagem-microsoft">
                     <img src="img/logo.png" alt="logo Microsoft">
+                </div>
+                <div class="dialog-buscar">
+                    <input type="text" placeholder="Pesquise em Microsoft.com">
+                    <button class="cancelar-pesquisa">Cancelar</button>
                 </div>
                 <div class="opcoes-cabecalho">
                     <ul>
@@ -34,7 +37,7 @@
                 <ul>
                     <li>Toda a Microsoft</li>
                     <li><img class="seta" src="img/seta.png"></li>
-                    <li>Pesquisar </li>
+                    <li class="pesquisar">Pesquisar </li>
                     <li><img class="lupa" src="img/lupa.png"></li>
                     <li>Carrinho</li>
                     <li><img class="carrinho" src="img/carrinho.png"></li>
@@ -43,21 +46,20 @@
                 </ul>   
             </div>
             <div class="menu-direita">
-                <img src="img/menu-direita.png">
+                <img src="img/menu-direita.png" alt="Menu de opções direita">
             </div>
         </header>
         <div class="centro">
-            <img src="img/bing.jpg" class="imagem-centro">
-            <img src="img/bing-hd.png" class="imagem-centro-hd">
-            <img src="img/bing-mobile.png" class="imagem-centro-mobile">
+            <img src="img/bing.jpg" class="imagem-centro" alt="Imagem Bing">
+            <img src="img/bing-hd.png" class="imagem-centro-hd" alt="Imagem Bing HD">
+            <img src="img/bing-mobile.png" class="imagem-centro-mobile" alt="Imagem Bing Mobile">
             <div class="texto-imagem">
                 <label>Apresentando o novo Bing</label>
                 <p>
                     Faça perguntas reais. Converse e crie. Receba respostas melhores
                     de seu copiloto com tecnologia de IA para a web.
                 </p>
-                <button class="btn-saiba-mais"><a href="https://www.bing.com/new?icid=mscom_marcom_H1a_BingAI">Saiba
-                        mais sobre o novo Bing</a></button>
+                <button class="btn-abrir-bing">Saiba mais sobre o novo Bing</a></button>
             </div>
         </div>
         <div class="botoes-carrossel">
@@ -65,23 +67,66 @@
         </div>
         <div class="inferior">
             <ul class="opcoes-inferior">
-                <div class="microsoft">
-                    <img src="img/windowslogo.webp" alt="Windows logo">
-                    <a
-                        href="https://www.microsoft.com/pt-br/microsoft-365/compare-all-microsoft-365-products?icid=MSCOM_QL_M365">Escolha
-                        seu Microsoft 365</a>
-                </div>
-                <div class="xbox">
-                    <img src="img/xboxlogo.webp" alt="Xbox logo">
-                    <a href="https://www.microsoft.com/pt-br/store/b/xbox?icid=MSCOM_QL_Xbox">Comprar o Xbox</a>
-                </div>
-                <div class="windows">
-                    <img src="img/windowslogo.webp" alt="Windows logo">
-                    <a href="https://www.microsoft.com/pt-br/windows/get-windows-11?icid=MSCOM_QL_Windows">Adquira o
-                        Windows 11</a>
-                </div>
+                <li>
+                    <div class="microsoft">
+                        <img src="img/windowslogo.webp" alt="Windows logo">
+                        <a href="https://www.microsoft.com/pt-br/microsoft-365/compare-all-microsoft-365-products?icid=MSCOM_QL_M365">Escolha seu Microsoft 365</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="xbox">
+                        <img src="img/xboxlogo.webp" alt="Xbox logo">
+                        <a href="https://www.microsoft.com/pt-br/store/b/xbox?icid=MSCOM_QL_Xbox">Comprar o Xbox</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="windows">
+                        <img src="img/windowslogo.webp" alt="Windows logo">
+                        <a href="https://www.microsoft.com/pt-br/windows/get-windows-11?icid=MSCOM_QL_Windows">Adquira o Windows 11</a>
+                    </div>
+                </li>
             </ul>
         </div>
+        <div class="dialog-novo-item">
+            <div class="header-dialog">
+                <p>Informe o conteúdo do novo item</p>
+                <input type="button" value="X" class="btn-dialog-fechar">
+            </div>
+            <div class="body-dialog">
+                <p>Título:</p>
+                <input type="text" name="input-text" placeholder="Título" class="input-titulo">
+                <p>Descrição:</p>
+                <input type="text" name="input-descricao" placeholder="Descrição" class="input-descricao">
+                <p>Link Imagem:</p>
+                <input type="text" name="input-link" placeholder="Link da imagem" class="input-link">
+                <input type="button" value="Adicionar" class="btn-dialog-adicionar">
+                <p class="resultado-adicionar"></p>
+            </div>
+        </div>
+        <div class="dialog-editar-item">
+            <div class="header-dialog">
+                <p>Informe o novo conteúdo do item</p>
+                <input type="button" value="X" class="btn-dialog-fechar-editar">
+            </div>
+            <div class="body-dialog">
+                <p>Título:</p>
+                <input type="text" name="input-text" placeholder="Título" class="input-titulo-editar">
+                <p>Descrição:</p>
+                <input type="text" name="input-descricao" placeholder="Descrição" class="input-descricao-editar">
+                <p>Link Imagem:</p>
+                <input type="text" name="input-link" placeholder="Link da imagem" class="input-link-editar">
+                <input type="button" value="Editar" class="btn-dialog-editar">
+                <p class="resultado-editar"></p>
+            </div>
+        </div>
+        <div class="conteudo-pagina">
+            <ul class="lista-conteudo"></ul>
+        </div>
+        <div class="box-adicionar-item">
+            <img src="img/adicionar.png" alt="Icone adicionar">
+            <p>Adicionar novo item</p>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
