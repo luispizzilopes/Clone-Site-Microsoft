@@ -1,3 +1,3 @@
 Status: Finalizado
 
-Nota: 30/30
+Nota: Aguardando correção

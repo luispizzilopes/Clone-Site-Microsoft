@@ -170,6 +170,24 @@ class Funcionalidades{
             }); 
         }
     }
+
+    pesquisar(){
+        if(inputBusca.value != ""){
+            for(let item of itens){
+                let titulo = item.querySelector('label').innerHTML.toLowerCase(); 
+                let pesquisa = inputBusca.value.toLowerCase(); 
+                if(!titulo.includes(pesquisa)){
+                    item.style.display = "none"; 
+                } else{
+                    item.style.display = "block"; 
+                }
+            }
+        } else{
+            for(let item of itens){
+                item.style.display = "block"; 
+            }
+        }
+    }
 }
 
 var funcionalidades = new Funcionalidades(); 
@@ -238,3 +256,30 @@ function mostrarConteudo(){
         lista.appendChild(item); 
     }
 }
+
+const pesquisar = document.querySelector('.pesquisar'); 
+const cancelarPesquisa = document.querySelector('.cancelar-pesquisa'); 
+const dialogBuscar = document.querySelector('.dialog-buscar');
+const inputBusca = document.querySelector('.dialog-buscar input');
+const itens = document.querySelectorAll('.item'); 
+const iconeMobilePesquisa = document.querySelector('.icone-pesquisar');
+
+pesquisar.addEventListener('click', function(){
+    dialogBuscar.className = "dialog-buscar-show"; 
+    inputBusca.value = ""; 
+});
+
+iconeMobilePesquisa.addEventListener('click', function(){
+    dialogBuscar.className = "dialog-buscar-show"; 
+    inputBusca.value = "";
+});
+
+cancelarPesquisa.addEventListener('click', function(){
+    dialogBuscar.className = "dialog-buscar"; 
+    inputBusca.value = ""; 
+    for(let item of itens){
+        item.style.display = "block"; 
+    }
+})
+
+inputBusca.addEventListener('input', funcionalidades.pesquisar); 
