@@ -141,7 +141,6 @@ body{
 .texto-imagem button{
     background-color: #0067b8;
     color: white;
-    border: 1.6;
     border: none;
     padding: 10px;
     border-radius: 2px;
@@ -445,7 +444,6 @@ body{
     .texto-imagem button{
         background-color: #0067b8;
         color: white;
-        border: 1.6;
         border: none;
         padding: 10px;
         border-radius: 2px;
