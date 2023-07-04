@@ -125,9 +125,10 @@ body{
     left: 8vw;
 }
 
-.texto-imagem label{
+.texto-imagem h1{
     color: white;
     font-size: 2.5vw;
+    font-weight: 100;
 }
 
 .texto-imagem p{
@@ -428,7 +429,7 @@ body{
         left: 8vw;
     }
 
-    .texto-imagem label{
+    .texto-imagem h1{
         color: black;
         font-size: 25px;
     }
